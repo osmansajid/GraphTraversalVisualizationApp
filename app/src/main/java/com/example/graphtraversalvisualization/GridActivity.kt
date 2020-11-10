@@ -7,6 +7,7 @@ import android.content.DialogInterface
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.Toast
 import androidx.gridlayout.widget.GridLayout
@@ -65,5 +66,13 @@ class GridActivity : AppCompatActivity() {
         }
     }
 
+    fun onStartClick(view: View) {
+        var childCount = gridLayout.childCount
+        for (i in 0 until childCount) {
+            val curButton = gridLayout.getChildAt(i) as Button
+            curButton.setEnabled(false)
+        }
+    }
+    
 
 }
